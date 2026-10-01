@@ -1,0 +1,8 @@
+{
+  "name": "hangul-guardians",
+  "private": true,
+  "version": "1.0.0",
+  "description": "한글 수호대 — 잃어버린 한글을 찾아서 (6학년 한글날 협력 RPG)",
+  "scripts": { "build": "node scripts/build.js" },
+  "engines": { "node": ">=18" }
+}
