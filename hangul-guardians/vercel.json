@@ -1,0 +1,9 @@
+{
+  "buildCommand": "node scripts/build.js",
+  "outputDirectory": "dist",
+  "installCommand": "",
+  "framework": null,
+  "headers": [
+    { "source": "/js/config.js", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
+  ]
+}

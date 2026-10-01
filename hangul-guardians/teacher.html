@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>한글 수호대 — 선생님 화면</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="teacher">
+<section id="t-setup" class="t-setup">
+  <h1 class="logo">한글 수호대</h1>
+  <p class="sub">선생님 화면</p>
+  <div class="join-card wide">
+    <h2>새 수업 방 만들기</h2>
+    <div class="row"><label for="t-goal">반 전체 목표 문장</label><input id="t-goal" maxlength="40"></div>
+    <div class="row"><label for="t-teams">모둠 수</label><input id="t-teams" type="number" min="2" max="8" value="5"></div>
+    <p class="lab">모둠별로 찾을 글자 (자동으로 나눠요)</p>
+    <div id="t-preview" class="preview"></div>
+    <button id="t-create" class="btn primary wide">방 만들기</button>
+    <hr>
+    <h2>만들었던 방 다시 열기</h2>
+    <div class="row inline"><input id="t-code" inputmode="numeric" maxlength="4" placeholder="방 코드 4자리"><button id="t-reopen" class="btn ghost">열기</button></div>
+    <p id="t-err" class="err" role="alert"></p>
+    <p id="t-mode" class="note"></p>
+  </div>
+</section>
+
+<section id="t-board" class="t-board hidden">
+  <header class="t-head">
+    <div class="t-title"><span class="logo small">한글 수호대</span><span id="t-status" class="t-status"></span></div>
+    <div class="t-code"><span>입장 코드</span><b id="t-code-big"></b></div>
+    <div class="t-actions">
+      <button id="t-start" class="btn primary">모험 시작</button>
+      <button id="t-prologue" class="btn ghost">이야기 보여 주기</button>
+      <button id="t-hint" class="btn ghost">힌트 보내기</button>
+      <button id="t-pause" class="btn ghost">일시정지</button>
+      <button id="t-boss" class="btn ghost">보스전 바로 시작</button>
+      <button id="t-results" class="btn ghost">결과 보기</button>
+      <button id="t-full" class="btn ghost" aria-label="전체 화면">⛶</button>
+    </div>
+  </header>
+  <div id="t-pausebar" class="t-pausebar hidden">학생 화면이 멈춰 있어요. 다시 시작하려면 「계속하기」를 누르세요.</div>
+  <main class="t-main">
+    <div class="t-sentence-wrap">
+      <div id="t-sentence" class="sentence huge"></div>
+      <p id="t-progress" class="t-progress"></p>
+    </div>
+    <div id="t-bosswrap" class="t-boss hidden"><span>묵귀 체력</span><div class="bb"><div id="t-bossbar"></div></div><b id="t-bossnum"></b></div>
+    <div id="t-teams-grid" class="t-grid"></div>
+  </main>
+</section>
+<div id="t-overlay" class="t-overlay hidden"></div>
+
+<script src="js/config.js"></script>
+<script src="js/content.js"></script>
+<script src="js/art.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/net.js"></script>
+<script src="js/teacher.js"></script>
+</body>
+</html>
